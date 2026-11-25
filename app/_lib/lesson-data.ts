@@ -197,8 +197,8 @@ export const lessons = [
     ],
     hints: [
       "Nháy nút Tạo tài khoản trên trang đăng nhập.",
-      "Dùng tên giả định, tên đăng nhập không dấu và mật khẩu luyện tập từ 8 kí tự.",
-      "Đọc thông tin tài khoản và xác nhận để hoàn tất đăng kí.",
+      "Điền lần lượt họ tên, ngày sinh, giới tính, địa chỉ Gmail và mật khẩu giả định. Thông tin khôi phục có thể bỏ qua; nếu thêm điện thoại, hãy nhập mã luyện tập.",
+      "Kiểm tra thông tin, đọc điều kiện mô phỏng và xác nhận để hoàn tất. Tài khoản trẻ em có thêm tình huống người giám hộ hỗ trợ.",
     ],
   },
   {

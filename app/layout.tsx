@@ -3,15 +3,16 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Theme } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
-import "./_styles/classroom.css";
 import "./_styles/mailbox.css";
-import "./_styles/lesson-guide.css";
 import "./_styles/message.css";
 import "./_styles/account.css";
 import "./_styles/dialogs.css";
 import "./_styles/validation.css";
 import "./_styles/responsive.css";
 import "./_styles/gmail-complete.css";
+import "./_styles/classroom.css";
+import "./_styles/lesson-guide.css";
+import "./_styles/signup.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -43,16 +43,36 @@ export function useMailWorkspace(
     initialMail.map((mail) => ({ ...mail })),
   );
   const [folder, setFolder] = useState("inbox");
-  const [category, setCategory] = useState("primary");
+  const [category, updateCategory] = useState("primary");
   const [openedId, setOpenedId] = useState<number | null>(null);
-  const [search, setSearch] = useState("");
+  const [search, updateSearch] = useState("");
   const [selected, setSelected] = useState<number[]>([]);
   const [profile, setProfile] = useState(false);
   const [compose, setCompose] = useState(false);
   const [minimized, setMinimized] = useState(false);
   const [composeExpanded, setComposeExpanded] = useState(false);
-  const [draft, setDraft] = useState<Draft | null>(null);
-  const [drafts, setDrafts] = useState<Draft[]>([]);
+  const [{ draft, drafts }, setDraftWorkspace] = useState<{
+    draft: Draft | null;
+    drafts: Draft[];
+  }>({ draft: null, drafts: [] });
+  function setDraft(value: SetStateAction<Draft | null>) {
+    setDraftWorkspace((previous) => {
+      const next = typeof value === "function" ? value(previous.draft) : value;
+      const otherDrafts = next
+        ? previous.drafts.filter((item) => item.id !== next.id)
+        : previous.drafts;
+      return {
+        draft: next,
+        drafts: next && hasDraftContent(next) ? [next, ...otherDrafts] : otherDrafts,
+      };
+    });
+  }
+  function setDrafts(value: SetStateAction<Draft[]>) {
+    setDraftWorkspace((previous) => ({
+      ...previous,
+      drafts: typeof value === "function" ? value(previous.drafts) : value,
+    }));
+  }
   const [error, setError] = useState("");
   const [labels, setLabels] = useState([
     { id: "school", name: "Học tập" },
@@ -64,7 +84,7 @@ export function useMailWorkspace(
     label: string;
   } | null>(null);
   const [density, setDensity] = useState<"normal" | "compact">("normal");
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, updatePageSize] = useState(10);
   const [showCategories, setShowCategories] = useState(true);
   const [page, setPage] = useState(0);
   const [mailFullscreen, setMailFullscreen] = useState(false);
@@ -105,14 +125,6 @@ export function useMailWorkspace(
       };
     });
   }
-  useEffect(() => {
-    if (draft && hasDraftContent(draft)) {
-      setDrafts((previous) => [
-        draft,
-        ...previous.filter((item) => item.id !== draft.id),
-      ]);
-    }
-  }, [draft]);
   useEffect(
     () => () => {
       objectUrls.current.forEach((url) => URL.revokeObjectURL(url));
@@ -139,10 +151,22 @@ export function useMailWorkspace(
     }, 1000);
     return () => clearInterval(interval);
   }, []);
-  useEffect(() => {
+  function resetPagination() {
     setPage(0);
     setSelected([]);
-  }, [folder, search, category, pageSize]);
+  }
+  function setSearch(value: string) {
+    updateSearch(value);
+    resetPagination();
+  }
+  function setCategory(value: string) {
+    updateCategory(value);
+    resetPagination();
+  }
+  function setPageSize(value: number) {
+    updatePageSize(value);
+    resetPagination();
+  }
   const filtered = mails.filter((mail) => {
     const anywhere = /\bin:anywhere\b/i.test(search);
     if (search) {
@@ -205,7 +229,8 @@ export function useMailWorkspace(
     setCompose(false);
     setDraft(null);
     setError("");
-    setToast("Đã lưu thư nháp trong phiên thực hành.");
+    if (draft && hasDraftContent(draft))
+      setToast("Đã lưu thư nháp trong phiên thực hành.");
   }
   function discardDraft() {
     if (draft)

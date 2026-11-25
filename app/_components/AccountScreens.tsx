@@ -1,22 +1,19 @@
 "use client";
 
-import { Button, TextField, Checkbox } from "@radix-ui/themes";
+import { Button, TextField } from "@radix-ui/themes";
 import { Icon } from "./icon";
 import { useSimulation } from "./simulation-context";
-import { registrationErrors, emailError } from "../_lib/validation";
+import { emailError } from "../_lib/validation";
 import { useLiveValidation } from "./use-live-validation";
 import { FieldFeedback } from "./FieldFeedback";
+import { SignupFlow } from "./SignupFlow";
 
 export function AccountScreens() {
   const {
     lesson,
     screen,
-    setScreen,
+    signupStage,
     account,
-    registration,
-    setRegistration,
-    accepted,
-    setAccepted,
     loginEmail,
     setLoginEmail,
     loginPassword,
@@ -28,14 +25,8 @@ export function AccountScreens() {
     mark,
     chooseLesson,
     beginSignup,
-    signup,
-    finishSignup,
     login,
   } = useSimulation();
-  const signValidation = useLiveValidation(
-    registrationErrors(registration),
-    "signup",
-  );
   const loginValidation = useLiveValidation(
     {
       loginEmail: emailError(loginEmail),
@@ -43,30 +34,14 @@ export function AccountScreens() {
     },
     "login",
   );
-  const signError = (field: keyof typeof registration) =>
-    signValidation.error(field, registration[field]);
   const loginEmailError = loginValidation.error("loginEmail", loginEmail);
   const loginPasswordError = loginValidation.error(
     "loginPassword",
     loginPassword,
   );
-  function updateRegistration(field: keyof typeof registration, value: string) {
-    setRegistration((previous) => ({ ...previous, [field]: value }));
-    signValidation.touch(field);
-    setError("");
-  }
-  function signFeedback(field: keyof typeof registration, success?: string) {
-    return (
-      <FieldFeedback
-        id={signValidation.feedbackId(field)}
-        error={signError(field)}
-        success={registration[field] && !signError(field) ? success : undefined}
-      />
-    );
-  }
   return (
-    <div className="account-page">
-      <div className="account-card">
+    <div className={`account-page ${screen === "signup" || screen === "review" ? "registration-page" : ""}`}>
+      <div className={`account-card ${screen === "signup" || screen === "review" ? "registration-card" : ""}`}>
         <div className="google-word" aria-label="Google">
           <span>G</span>
           <span>o</span>
@@ -177,178 +152,7 @@ export function AccountScreens() {
             </div>
           </>
         )}
-        {screen === "signup" && (
-          <>
-            <h3>Tạo tài khoản</h3>
-            <p>Sử dụng thông tin giả định để luyện tập</p>
-            <form
-              onSubmit={(event) => {
-                if (signValidation.validate(event)) signup(event);
-                else setError("");
-              }}
-              noValidate
-            >
-              <div className="name-fields">
-                <label>
-                  Họ
-                  <TextField.Root
-                    {...signValidation.fieldProps("last", registration.last)}
-                    aria-label="Họ"
-                    value={registration.last}
-                    placeholder="Hoàng Hải"
-                    onChange={(e) => updateRegistration("last", e.target.value)}
-                  />
-                  {signFeedback("last")}
-                </label>
-                <label>
-                  Tên
-                  <TextField.Root
-                    {...signValidation.fieldProps("first", registration.first)}
-                    aria-label="Tên"
-                    value={registration.first}
-                    placeholder="Hà"
-                    onChange={(e) =>
-                      updateRegistration("first", e.target.value)
-                    }
-                  />
-                  {signFeedback("first")}
-                </label>
-              </div>
-              <label>
-                Tên đăng nhập
-                <div className="username-field">
-                  <TextField.Root
-                    {...signValidation.fieldProps(
-                      "username",
-                      registration.username,
-                    )}
-                    aria-label="Tên đăng nhập"
-                    value={registration.username}
-                    placeholder="hahai6a"
-                    autoCapitalize="none"
-                    onChange={(e) =>
-                      updateRegistration("username", e.target.value)
-                    }
-                  />
-                  <span>@gmail.com</span>
-                </div>
-                {signFeedback("username", "Tên đăng nhập đúng định dạng.")}
-              </label>
-              <label>
-                Mật khẩu luyện tập
-                <TextField.Root
-                  {...signValidation.fieldProps(
-                    "password",
-                    registration.password,
-                  )}
-                  aria-label="Mật khẩu luyện tập"
-                  type={showPassword ? "text" : "password"}
-                  autoComplete="new-password"
-                  value={registration.password}
-                  onChange={(e) =>
-                    updateRegistration("password", e.target.value)
-                  }
-                />
-                {signFeedback("password", "Mật khẩu đạt yêu cầu luyện tập.")}
-              </label>
-              <label>
-                Xác nhận mật khẩu
-                <TextField.Root
-                  {...signValidation.fieldProps(
-                    "confirm",
-                    registration.confirm,
-                  )}
-                  aria-label="Xác nhận mật khẩu"
-                  type={showPassword ? "text" : "password"}
-                  autoComplete="new-password"
-                  value={registration.confirm}
-                  onChange={(e) =>
-                    updateRegistration("confirm", e.target.value)
-                  }
-                />
-                {signFeedback("confirm", "Hai mật khẩu đã khớp.")}
-              </label>
-              <label className="checkbox-label">
-                <Checkbox
-                  checked={showPassword}
-                  onCheckedChange={(checked) =>
-                    setShowPassword(checked === true)
-                  }
-                />
-                Hiện mật khẩu
-              </label>
-              {error && (
-                <p className="form-error" role="alert">
-                  {error}
-                </p>
-              )}
-              <div className="account-buttons">
-                <Button
-                  variant="soft"
-                  type="button"
-                  className="text-button"
-                  onClick={() => {
-                    setScreen("login");
-                    setError("");
-                  }}
-                >
-                  Đăng nhập
-                </Button>
-                <Button variant="soft" className="google-button" type="submit">
-                  Tiếp theo
-                </Button>
-              </div>
-            </form>
-          </>
-        )}
-        {screen === "review" && (
-          <>
-            <span className="review-icon">
-              <Icon name="mail" size={30} />
-            </span>
-            <h3>Kiểm tra thông tin</h3>
-            <p>Một bước nữa là có hộp thư của em!</p>
-            <div className="account-summary">
-              <strong>
-                {registration.last} {registration.first}
-              </strong>
-              <span>{registration.username}@gmail.com</span>
-            </div>
-            <form onSubmit={finishSignup} noValidate>
-              <label className="checkbox-label">
-                <Checkbox
-                  checked={accepted}
-                  onCheckedChange={(checked) => {
-                    setAccepted(checked === true);
-                    setError("");
-                  }}
-                />
-                Em đang dùng thông tin và mật khẩu giả định để thực hành.
-              </label>
-              <p className="account-notice">
-                Khi tạo tài khoản thật, hãy nhờ phụ huynh hoặc thầy cô hỗ trợ.
-              </p>
-              {error && (
-                <p className="form-error" role="alert">
-                  {error}
-                </p>
-              )}
-              <div className="account-buttons">
-                <Button
-                  variant="soft"
-                  type="button"
-                  className="text-button"
-                  onClick={() => setScreen("signup")}
-                >
-                  Quay lại
-                </Button>
-                <Button variant="soft" type="submit" className="google-button">
-                  Tạo tài khoản
-                </Button>
-              </div>
-            </form>
-          </>
-        )}
+        {(screen === "signup" || screen === "review") && <SignupFlow key={signupStage} />}
         {screen === "welcome" && (
           <>
             <span className="welcome-check">

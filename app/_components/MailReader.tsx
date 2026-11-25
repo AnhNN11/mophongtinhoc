@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react";
 import { Button, DropdownMenu, IconButton } from "@radix-ui/themes";
 import {
-  ArrowLeft,
-  ArrowRight,
   ChevronDown,
   MoreVertical,
   Printer,

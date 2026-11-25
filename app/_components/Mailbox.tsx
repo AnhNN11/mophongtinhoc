@@ -17,8 +17,6 @@ import {
   SlidersHorizontal,
   CircleHelp,
   Settings,
-  Grid3X3,
-  Sparkles,
   PenLine,
   Inbox,
   Star,
@@ -43,11 +41,9 @@ import {
   Info,
   ShoppingBag,
   Bookmark,
-  Check,
   Paperclip,
   CalendarClock,
   LogOut,
-  Maximize2,
 } from "lucide-react";
 import { useSimulation } from "./simulation-context";
 import { ComposeWindow } from "./ComposeWindow";
@@ -140,11 +136,9 @@ const categories = [
 export function Mailbox() {
   const {
     lesson,
-    mode,
     currentStep,
     account,
     mails,
-    sent,
     folder,
     setFolder,
     category,
@@ -182,8 +176,6 @@ export function Mailbox() {
     lastPage,
     showCategories,
     density,
-    mailFullscreen,
-    setMailFullscreen,
   } = useSimulation();
   const [more, setMore] = useState(false),
     [collapsed, setCollapsed] = useState(false);
@@ -377,46 +369,6 @@ export function Mailbox() {
           >
             <Settings size={20} />
           </MailIcon>
-          <MailIcon
-            label="Mẫu thư luyện tập"
-            onClick={() => setPanel("templates")}
-          >
-            <Sparkles size={20} />
-          </MailIcon>
-          <Popover.Root>
-            <Popover.Trigger>
-              <IconButton
-                variant="ghost"
-                size="1"
-                aria-label="Ứng dụng mô phỏng"
-                className="gmail-icon"
-              >
-                <Grid3X3 size={19} />
-              </IconButton>
-            </Popover.Trigger>
-            <Popover.Content size="2">
-              <div className="apps-grid">
-                <Popover.Close>
-                  <Button variant="ghost" onClick={() => setFolder("inbox")}>
-                    <Mail size={23} />
-                    Gmail
-                  </Button>
-                </Popover.Close>
-                <Popover.Close>
-                  <Button variant="ghost" onClick={() => setPanel("contacts")}>
-                    <Users size={23} />
-                    Danh bạ
-                  </Button>
-                </Popover.Close>
-                <Popover.Close>
-                  <Button variant="ghost" onClick={() => setFolder("drafts")}>
-                    <FileText size={23} />
-                    Thư nháp
-                  </Button>
-                </Popover.Close>
-              </div>
-            </Popover.Content>
-          </Popover.Root>
           <Popover.Root open={profile} onOpenChange={setProfile}>
             <Popover.Trigger>
               <Button
@@ -466,7 +418,7 @@ export function Mailbox() {
         />
         <aside className="mail-sidebar complete-mail-sidebar">
           <Button
-            className={`compose-button ${mode === "guided" && lesson === 2 && currentStep === 0 ? "suggested" : ""}`}
+            className={`compose-button ${lesson === 2 && currentStep === 0 ? "suggested" : ""}`}
             aria-label="Soạn thư"
             onClick={startCompose}
           >
@@ -536,10 +488,6 @@ export function Mailbox() {
                 </DropdownMenu.Root>
               </div>
             ))}
-          </div>
-          <div className="mail-storage">
-            <div />
-            <span>Chỉ dùng dữ liệu mô phỏng</span>
           </div>
         </aside>
         <section
@@ -723,6 +671,17 @@ export function Mailbox() {
                   </IconButton>
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content>
+                  <DropdownMenu.Item onSelect={() => setPanel("settings")}>
+                    Cài đặt hộp thư
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item onSelect={() => setPanel("contacts")}>
+                    Danh bạ luyện tập
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Item onSelect={() => setPanel("templates")}>
+                    Mẫu thư luyện tập
+                  </DropdownMenu.Item>
+                  {targetIds.length > 0 && <>
+                  <DropdownMenu.Separator />
                   <DropdownMenu.Item
                     disabled={!targetIds.length}
                     onSelect={() => action("read")}
@@ -753,7 +712,7 @@ export function Mailbox() {
                   >
                     Khôi phục về Hộp thư đến
                   </DropdownMenu.Item>
-                  <DropdownMenu.Separator />
+                  </>}
                   {opened && (
                     <DropdownMenu.Item
                       disabled={!!opened.expiresAt}
@@ -777,9 +736,6 @@ export function Mailbox() {
                       Xóa vĩnh viễn trong mô phỏng
                     </DropdownMenu.Item>
                   )}
-                  <DropdownMenu.Item onSelect={() => setPanel("settings")}>
-                    Cài đặt hiển thị
-                  </DropdownMenu.Item>
                 </DropdownMenu.Content>
               </DropdownMenu.Root>
             </div>
@@ -1019,44 +975,10 @@ export function Mailbox() {
                   </p>
                 </div>
               )}
-              <div className="mail-bottom-note">
-                <span>Gmail mô phỏng · Dữ liệu luyện tập</span>
-                <span>Không gửi thư ra ngoài</span>
-              </div>
             </>
           )}
         </section>
-        <aside className="gmail-side-tools">
-          <MailIcon
-            label="Lịch gửi và nhắc lại"
-            onClick={() => {
-              setMore(true);
-              setFolder("scheduled");
-            }}
-          >
-            <CalendarClock size={20} />
-          </MailIcon>
-          <MailIcon label="Thư nháp của em" onClick={() => setFolder("drafts")}>
-            <FileText size={20} />
-          </MailIcon>
-          <MailIcon
-            label="Danh bạ luyện tập"
-            onClick={() => setPanel("contacts")}
-          >
-            <Users size={20} />
-          </MailIcon>
-          <span />
-          <MailIcon
-            label={
-              mailFullscreen
-                ? "Thoát toàn màn hình hộp thư"
-                : "Toàn màn hình hộp thư"
-            }
-            onClick={() => setMailFullscreen(!mailFullscreen)}
-          >
-            <Maximize2 size={18} />
-          </MailIcon>
-        </aside>
+
       </div>
       {compose && <ComposeWindow />}
       <MailboxDialogs panel={panel} setPanel={setPanel} />

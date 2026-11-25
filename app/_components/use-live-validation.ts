@@ -29,11 +29,10 @@ export function useLiveValidation<Field extends string>(
       (field) => !!errors[field],
     );
     if (invalid) {
-      (
-        event.currentTarget.elements.namedItem(
-          invalid,
-        ) as HTMLInputElement | null
-      )?.focus();
+      const form = event.currentTarget;
+      const control = form.elements.namedItem(invalid);
+      if (control instanceof HTMLElement) control.focus();
+      else form.querySelector<HTMLElement>(`[data-validation-field="${invalid}"]`)?.focus();
       return false;
     }
     return true;

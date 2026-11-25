@@ -151,7 +151,7 @@ export function ComposeWindow() {
           "aria-label": "Nội dung thư",
           "aria-multiline": "true",
           "aria-invalid": String(!!contentError),
-          "aria-describedby": contentError ? validation.feedbackId("body") : "",
+          "aria-describedby": contentError ? "compose-body-feedback" : "",
           spellcheck: String(spellcheck),
         },
       },
@@ -593,7 +593,9 @@ export function ComposeWindow() {
           </Action>
         </div>
         <div className="compose-status">
-          Đã lưu vào Thư nháp · Ctrl + Enter để gửi · Mô phỏng
+          {recipient || cc || bcc || subject || body || attachments.length
+            ? "Đã lưu vào Thư nháp · "
+            : ""}Ctrl + Enter để gửi · Mô phỏng
         </div>
         <input
           ref={fileRef}
