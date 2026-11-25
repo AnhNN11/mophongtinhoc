@@ -173,7 +173,7 @@ export function SignupFlow() {
         </>}
         {error && <p className="form-error" role="alert">{error}</p>}
         <div className="signup-buttons">
-          <Button variant="ghost" type="button" onClick={previousSignupStage}>{stage === "type" ? "Về đăng nhập" : "Quay lại"}</Button>
+          <Button variant="ghost" type="button" onClick={previousSignupStage}>{stage === "type" ? "Sang bài đăng nhập" : "Quay lại"}</Button>
           {stage === "recovery" && <Button variant="ghost" type="button" onClick={skipRecovery}>Bỏ qua</Button>}
           {stage !== "type" && <Button type="submit">{stage === "review" ? "Tạo tài khoản mô phỏng" : stage === "verify" ? "Xác minh" : "Tiếp theo"}</Button>}
         </div>

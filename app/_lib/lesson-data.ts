@@ -191,12 +191,12 @@ export const lessons = [
     subtitle: "Bắt đầu hành trình kết nối",
     icon: "plus" as IconName,
     steps: [
-      "Chọn Tạo tài khoản",
+      "Chọn loại tài khoản",
       "Điền thông tin tài khoản",
       "Xác nhận và hoàn tất",
     ],
     hints: [
-      "Nháy nút Tạo tài khoản trên trang đăng nhập.",
+      "Chọn Cho bản thân tôi hoặc Dành cho trẻ em để bắt đầu đăng ký.",
       "Điền lần lượt họ tên, ngày sinh, giới tính, địa chỉ Gmail và mật khẩu giả định. Thông tin khôi phục có thể bỏ qua; nếu thêm điện thoại, hãy nhập mã luyện tập.",
       "Kiểm tra thông tin, đọc điều kiện mô phỏng và xác nhận để hoàn tất. Tài khoản trẻ em có thêm tình huống người giám hộ hỗ trợ.",
     ],

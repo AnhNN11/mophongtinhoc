@@ -98,8 +98,8 @@ export function PracticeDialogs() {
             <>
               <ol className="help-list">
                 <li>
-                  <strong>Tạo tài khoản:</strong> Nháy Tạo tài khoản, điền thông
-                  tin giả định và xác nhận.
+                  <strong>Tạo tài khoản:</strong> Bài này mở thẳng màn hình đăng
+                  ký. Chọn loại tài khoản, điền thông tin giả định và xác nhận.
                 </li>
                 <li>
                   <strong>Đăng nhập & đọc thư:</strong> Dùng tài khoản vừa tạo

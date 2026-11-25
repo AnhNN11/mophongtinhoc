@@ -24,7 +24,6 @@ export function AccountScreens() {
     setError,
     mark,
     chooseLesson,
-    beginSignup,
     login,
   } = useSimulation();
   const loginValidation = useLiveValidation(
@@ -131,7 +130,7 @@ export function AccountScreens() {
                   variant="soft"
                   type="button"
                   className="text-button"
-                  onClick={beginSignup}
+                  onClick={() => chooseLesson(0)}
                 >
                   Tạo tài khoản
                 </Button>

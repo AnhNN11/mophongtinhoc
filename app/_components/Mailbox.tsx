@@ -166,8 +166,7 @@ export function Mailbox() {
     setToast,
     setModal,
     mark,
-    setCompose,
-    setScreen,
+    chooseLesson,
     visibleMails,
     filteredCount,
     page,
@@ -396,9 +395,7 @@ export function Mailbox() {
                 variant="surface"
                 onClick={() => {
                   mark(1, 3);
-                  setProfile(false);
-                  setCompose(false);
-                  setScreen("login");
+                  chooseLesson(1);
                   setToast("Đã đăng xuất an toàn khỏi hộp thư.");
                 }}
               >

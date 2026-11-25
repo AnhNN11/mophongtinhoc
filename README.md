@@ -25,7 +25,7 @@ npm install
 npm run dev
 ```
 
-Mở [http://localhost:3000](http://localhost:3000). Màn hình ban đầu có sẵn hộp thư mẫu để học sinh thử gửi thư. Chọn bài ở thanh điều hướng để học từ bước tạo tài khoản. Bước cần làm luôn xuất hiện ngay trên vùng thực hành; nút **Các bước** mở danh sách kiểm tra mà không thu hẹp hộp thư.
+Mở [http://localhost:3000](http://localhost:3000). Màn hình ban đầu có sẵn hộp thư mẫu để học sinh thử gửi thư. Chọn bài **Tạo tài khoản** để mở thẳng luồng đăng ký, chọn **Đăng nhập & đọc thư** để mở trang đăng nhập. Bước cần làm luôn xuất hiện ngay trên vùng thực hành; nút **Các bước** mở danh sách kiểm tra mà không thu hẹp hộp thư. Tiến độ bước đầu đăng ký chỉ được ghi nhận sau khi chọn loại tài khoản.
 
 ```powershell
 npm run build

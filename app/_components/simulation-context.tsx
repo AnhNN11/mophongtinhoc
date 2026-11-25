@@ -10,7 +10,7 @@ import {
 import { emptyChecks, lessons } from "../_lib/lesson-data";
 import { emailError } from "../_lib/validation";
 import {
-  emptyRegistration, signupErrors, signupStepErrors, signupStages,
+  accountTypes, emptyRegistration, signupErrors, signupStepErrors, signupStages,
   normalizedPhone, phoneError, verificationError,
   type SignupStage, type Registration, type RegistrationField,
 } from "../_lib/registration";
@@ -116,7 +116,8 @@ function useSimulationState() {
     setSearch("");
     setFolder("inbox");
     setCompose(false);
-    setScreen(index === 2 ? "mail" : "login");
+    if (index === 0) beginSignup();
+    else setScreen(index === 2 ? "mail" : "login");
     setLoginEmail("");
     setLoginPassword("");
     setShowTasks(false);
@@ -132,10 +133,10 @@ function useSimulationState() {
     setTermsAccepted(false);
     setGuardianAccepted(false);
     setError("");
-    mark(0, 0);
   }
   function updateRegistration(field: RegistrationField, value: string) {
     setRegistration((previous) => ({ ...previous, [field]: value }));
+    if (field === "accountType" && Object.hasOwn(accountTypes, value)) mark(0, 0);
     setAccepted(false);
     setTermsAccepted(false);
     setGuardianAccepted(false);
@@ -153,8 +154,7 @@ function useSimulationState() {
   }
   function previousSignupStage() {
     if (signupStage === "type") {
-      setScreen("login");
-      setError("");
+      chooseLesson(1);
     } else if (signupStage === "verify" || signupStage === "review") {
       goToSignupStage("recovery");
     } else {
@@ -250,13 +250,6 @@ function useSimulationState() {
     } catch { memoryOnly = true; }
     window.dispatchEvent(new Event("lesson-progress"));
     workspace.resetMailbox();
-    setRegistration(emptyRegistration());
-    setSignupStage("type");
-    setVerificationChallenge("");
-    setVerifiedPhone("");
-    setAccepted(false);
-    setTermsAccepted(false);
-    setGuardianAccepted(false);
     setAccount({
       name: "Hà Hoàng Hải",
       email: "hahai6a@gmail.com",
@@ -324,7 +317,6 @@ function useSimulationState() {
     currentStep,
     progress,
     chooseLesson,
-    beginSignup,
     signup,
     finishSignup,
     login,
