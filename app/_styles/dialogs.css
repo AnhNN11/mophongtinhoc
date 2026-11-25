@@ -1,0 +1,116 @@
+/* Radix handles dialog focus, keyboard navigation, portals and scroll locking. */
+.practice-dialog {
+  background: #fffef9 !important;
+  border: 1px solid #d7dfc8 !important;
+  position: relative;
+}
+.practice-dialog .rt-DialogTitle {
+  font-size: 23px;
+  letter-spacing: -0.4px;
+  color: #48632f;
+}
+.practice-dialog .rt-DialogDescription {
+  line-height: 1.9;
+  color: #8da676;
+}
+.modal-close {
+  position: absolute !important;
+  right: 17px;
+  top: 17px;
+}
+.modal-symbol {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  border-radius: 7px;
+  background: #edf2e2;
+  color: #819d61;
+  margin-bottom: 19px;
+}
+.help-list {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #8ca272;
+  padding-left: 18px;
+}
+.help-list li {
+  margin: 12px 0;
+  padding-left: 3px;
+}
+.help-list strong {
+  color: #6e8a52;
+}
+.result-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 20px 0;
+}
+.result-rows > .rt-Button {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  height: auto;
+  min-height: 68px;
+  padding: 12px;
+  gap: 12px;
+  white-space: normal;
+  background: white;
+  box-shadow: inset 0 0 0 1px #dbe5cd;
+}
+.result-check {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  background: #f0f4e8;
+  border-radius: 5px;
+  flex-shrink: 0;
+  color: #a1b98a;
+}
+.result-check.finished {
+  background: #e9f2dc;
+  color: #82a864;
+}
+.result-rows strong {
+  font-size: 12px;
+  font-weight: 500;
+  color: #789758;
+}
+.result-rows small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #a2b98a;
+  margin-top: 4px;
+}
+.result-rows > .rt-Button > svg {
+  margin-left: auto;
+  color: #a6be8e;
+}
+.result-detail {
+  font-size: 11px;
+  line-height: 1.9;
+  color: #a0b68b;
+}
+.toast.rt-CalloutRoot {
+  position: fixed;
+  bottom: 22px;
+  left: calc(50% + 116px);
+  transform: translateX(-50%);
+  z-index: 50;
+  max-width: calc(100vw - 50px);
+  width: max-content;
+  box-shadow: 0 4px 20px #3b562429;
+  background: #fffef8;
+  border: 1px solid #d3e0c0;
+  color: #7f9e60;
+  align-items: center;
+}
+.toast .rt-CalloutText {
+  font-size: 12px;
+}
+.toast .rt-IconButton {
+  margin-left: 6px;
+}

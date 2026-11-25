@@ -1,0 +1,214 @@
+/* Registration and sign-in use Radix text fields and buttons. */
+.account-page {
+  padding: 25px 15px 18px;
+  min-height: 450px;
+  background: white;
+}
+.account-card {
+  max-width: 340px;
+  margin: auto;
+  padding: 0 12px;
+  text-align: center;
+}
+.google-word {
+  font-size: 24px;
+  letter-spacing: -1.5px;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+.google-word span:nth-child(1),
+.google-word span:nth-child(4) {
+  color: #4285f4;
+}
+.google-word span:nth-child(2),
+.google-word span:nth-child(6) {
+  color: #ea4335;
+}
+.google-word span:nth-child(3) {
+  color: #fbbc05;
+}
+.google-word span:nth-child(5) {
+  color: #34a853;
+}
+.account-card h3 {
+  font-size: 22px;
+  letter-spacing: -0.4px;
+  font-weight: 500;
+  color: #425d2e;
+}
+.account-card > p {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #8ea274;
+  margin: 7px 0 18px;
+}
+.account-card form {
+  text-align: left;
+}
+.account-card label:not(.checkbox-label) {
+  display: block;
+  font-size: 11px;
+  color: #7f9864;
+  margin-bottom: 12px;
+}
+.account-card .rt-TextFieldRoot {
+  margin-top: 6px;
+  height: 35px;
+  min-width: 0;
+  font-size: 12px;
+  box-shadow: inset 0 0 0 1px #d6e0c8;
+  background: white;
+  color: #658348;
+}
+.account-card .rt-TextFieldInput::placeholder {
+  color: #b2c19d;
+}
+.password-field {
+  position: relative;
+}
+.password-field .rt-TextFieldInput {
+  padding-right: 36px;
+}
+.password-field > .rt-Button {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  height: 28px;
+  min-width: 25px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #9db486;
+}
+.account-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 21px;
+}
+.text-button.rt-Button {
+  background: none;
+  box-shadow: none;
+  color: #729758;
+  padding: 0;
+  font-size: 11px;
+  height: 30px;
+}
+.google-button.rt-Button {
+  background: #5e8042;
+  color: #fff;
+  font-size: 12px;
+  height: 34px;
+  padding: 0 16px;
+  box-shadow: none;
+}
+.demo-credentials {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  margin-top: 22px;
+  text-align: left;
+  background: #f5f8ed;
+  border: 1px solid #e2ead5;
+  border-radius: 5px;
+  color: #90a874;
+}
+.demo-credentials strong {
+  display: block;
+  font-size: 10px;
+  color: #7e9b60;
+  margin-bottom: 5px;
+}
+.demo-credentials span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.demo-credentials b {
+  font-weight: 500;
+}
+.name-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.username-field {
+  position: relative;
+}
+.username-field .rt-TextFieldInput {
+  padding-right: 85px;
+}
+.username-field > span {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  font-size: 11px;
+  color: #a4b88c;
+}
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 11px;
+  color: #8ea975;
+  line-height: 1.8;
+}
+.checkbox-label input {
+  accent-color: #6b8c47;
+  margin: 4px 0 0;
+  flex-shrink: 0;
+}
+.account-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 8px;
+  color: #acbe96;
+  margin-top: 24px;
+}
+.review-icon,
+.welcome-check {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #eaf1df;
+  color: #85a663;
+  margin: 18px auto;
+}
+.account-summary {
+  padding: 17px 12px;
+  border-radius: 5px;
+  background: #f1f6e8;
+  margin: 20px 0;
+  color: #7c9a5f;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.account-summary span {
+  display: block;
+  font-size: 10px;
+  color: #a1b58a;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+.account-notice {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #a2b68a;
+  margin-top: 13px;
+}
+.primary-button.rt-Button {
+  background: #5e8042;
+  color: white;
+  font-size: 12px;
+  height: 36px;
+  padding: 0 17px;
+  box-shadow: none;
+}
+.account-card > .primary-button {
+  margin: 20px auto;
+}

@@ -1,0 +1,49 @@
+/* Inline feedback is shared by account forms and the Gmail simulator. */
+.field-feedback {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 10px !important;
+  line-height: 1.7 !important;
+  margin: 6px 0 9px !important;
+  padding: 0 !important;
+  overflow-wrap: anywhere;
+}
+.field-feedback svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.field-feedback.invalid {
+  color: #b44337 !important;
+}
+.field-feedback.valid {
+  color: #688447 !important;
+}
+.account-card .rt-TextFieldRoot:has(input[aria-invalid="true"]),
+.compose-fields .rt-TextFieldRoot:has(input[aria-invalid="true"]),
+.compose-fields .rt-TextAreaRoot:has(textarea[aria-invalid="true"]) {
+  box-shadow: inset 0 0 0 1.5px #c75f50 !important;
+  background: #fff8f5 !important;
+}
+.compose-fields .rt-TextFieldRoot:has(input[aria-invalid="true"]) input {
+  padding-left: 8px;
+  color: #a14b3c;
+}
+.compose-fields .rt-TextAreaRoot:has(textarea[aria-invalid="true"]) textarea {
+  padding-left: 8px;
+  padding-right: 8px;
+  background: transparent;
+}
+.compose-window {
+  max-height: calc(100% - 10px);
+  overflow-y: auto;
+}
+.compose-title {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.account-card .field-feedback {
+  font-weight: 400;
+  text-align: left;
+}

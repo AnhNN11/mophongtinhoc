@@ -1,0 +1,1134 @@
+@media (min-width: 1600px) {
+  main {
+    padding: 27px 35px 20px;
+  }
+  .topbar {
+    padding: 0 35px;
+  }
+  .hero-banner {
+    min-height: 112px;
+  }
+  .hero-copy h2 {
+    font-size: 23px;
+  }
+  .gmail-app {
+    min-height: 490px;
+  }
+  .mail-body,
+  .mail-content {
+    min-height: 428px;
+  }
+  .mail-row {
+    height: 48px;
+  }
+  .mail-sidebar {
+    width: 170px;
+  }
+  .row-sender {
+    width: 130px;
+  }
+  .mail-row-open.rt-Button {
+    font-size: 12px;
+  }
+  .mail-sidebar nav .rt-Button {
+    font-size: 11px;
+  }
+  .instruction-panel {
+    padding: 0 20px;
+  }
+  .task-steps strong {
+    font-size: 12px;
+  }
+  .task-steps .current p {
+    font-size: 11px;
+  }
+}
+@media (max-width: 1250px) {
+  .sidebar {
+    width: 213px;
+    padding: 20px 12px 15px;
+  }
+  .main-shell {
+    margin-left: 213px;
+    width: calc(100% - 213px);
+  }
+  .school-logo {
+    width: 59px;
+    height: 59px;
+  }
+  .brand {
+    gap: 9px;
+  }
+  .brand-name {
+    font-size: 16px;
+    letter-spacing: 0.7px;
+  }
+  .brand-name small {
+    font-size: 6px;
+  }
+  .lesson-nav-item.rt-Button {
+    font-size: 11px;
+    padding: 9px;
+    gap: 8px;
+  }
+  main {
+    padding: 22px 23px 16px;
+  }
+  .topbar {
+    padding: 0 23px;
+  }
+  .practice-layout {
+    grid-template-columns: minmax(0, 1fr) 237px;
+    gap: 13px;
+  }
+  .hero-progress {
+    width: 170px;
+    padding-left: 20px;
+  }
+  .hero-copy h2 {
+    font-size: 20px;
+  }
+  .hero-banner {
+    padding: 16px 19px;
+    gap: 15px;
+  }
+  .hero-progress > span {
+    font-size: 6px;
+  }
+  .hero-banner:after {
+    right: 190px;
+  }
+  .mail-sidebar {
+    width: 133px;
+  }
+  .mail-sidebar nav .rt-Button {
+    font-size: 9px;
+    padding-left: 13px;
+    gap: 9px;
+  }
+  .compose-button.rt-Button {
+    font-size: 11px;
+    padding: 0 10px;
+    gap: 7px;
+    margin-right: 8px;
+  }
+  .gmail-logo {
+    font-size: 20px;
+  }
+  .gmail-header {
+    padding: 0 12px;
+    gap: 10px;
+  }
+  .mail-search {
+    margin-left: 3px;
+  }
+  .row-sender {
+    width: 91px;
+  }
+  .mail-row-open.rt-Button {
+    font-size: 10px;
+    gap: 10px;
+  }
+  .row-time {
+    font-size: 7px;
+  }
+  .mail-row {
+    gap: 7px;
+  }
+  .mail-storage {
+    font-size: 6px;
+    padding-left: 14px;
+  }
+  .instruction-panel {
+    padding: 0 15px;
+  }
+  .task-steps strong {
+    font-size: 10px;
+  }
+  .task-steps .current p {
+    font-size: 9px;
+  }
+  .task-intro p {
+    font-size: 10px;
+  }
+  .toast.rt-CalloutRoot {
+    left: calc(50% + 106px);
+  }
+}
+@media (max-width: 1050px) {
+  .sidebar {
+    width: 195px;
+    padding: 20px 10px 14px;
+  }
+  .main-shell {
+    margin-left: 195px;
+    width: calc(100% - 195px);
+  }
+  .school-logo {
+    width: 54px;
+    height: 54px;
+  }
+  .brand-name {
+    font-size: 15px;
+  }
+  .brand-name small {
+    font-size: 5.5px;
+    letter-spacing: 0.4px;
+  }
+  .lesson-nav-item.rt-Button {
+    font-size: 10px;
+    padding: 8px 7px;
+    gap: 7px;
+  }
+  .lesson-nav-item small {
+    font-size: 8px;
+  }
+  .topic-title {
+    font-size: 10px;
+  }
+  .current-chapter strong {
+    font-size: 12px;
+  }
+  .hero-copy h2 {
+    font-size: 18px;
+  }
+  .hero-copy p {
+    font-size: 10px;
+  }
+  .hero-progress {
+    width: 135px;
+    padding-left: 15px;
+  }
+  .hero-progress strong {
+    font-size: 22px;
+  }
+  .hero-progress strong span {
+    font-size: 9px;
+  }
+  .exercise-insignia {
+    width: 42px;
+    height: 52px;
+  }
+  .hero-banner {
+    gap: 13px;
+    padding: 15px;
+  }
+  .practice-layout {
+    grid-template-columns: minmax(0, 1fr) 216px;
+  }
+  .mail-sidebar {
+    width: 109px;
+  }
+  .mail-sidebar nav .rt-Button {
+    font-size: 8px;
+    padding-left: 10px;
+    gap: 6px;
+  }
+  .mail-sidebar nav svg {
+    width: 13px;
+  }
+  .compose-button.rt-Button {
+    font-size: 10px;
+    padding: 0 8px;
+    gap: 6px;
+    margin-left: 7px;
+    height: 39px;
+  }
+  .compose-button svg {
+    width: 18px;
+  }
+  .gmail-menu {
+    display: none;
+  }
+  .gmail-logo {
+    font-size: 18px;
+  }
+  .gmail-logo svg {
+    width: 26px;
+  }
+  .gmail-header {
+    gap: 8px;
+  }
+  .mail-search .rt-TextFieldInput {
+    font-size: 9px;
+    padding-left: 27px;
+  }
+  .mail-search > svg {
+    left: 7px;
+    width: 15px;
+  }
+  .row-sender {
+    width: 75px;
+  }
+  .mail-row-open.rt-Button {
+    font-size: 9px;
+    gap: 9px;
+  }
+  .row-time {
+    display: none;
+  }
+  .row-square {
+    display: none;
+  }
+  .mail-bottom-note {
+    flex-direction: column;
+    gap: 7px;
+  }
+  .mail-bottom-note > span {
+    border: 0;
+  }
+  .mail-storage {
+    font-size: 5px;
+    padding-left: 9px;
+  }
+  .practice-heading h2 {
+    font-size: 13px;
+  }
+  .practice-heading .rt-Badge {
+    font-size: 7px;
+  }
+  .instruction-panel {
+    padding: 0 13px;
+  }
+  .task-intro h3 {
+    font-size: 15px;
+  }
+  .task-steps .current p {
+    font-size: 9px;
+  }
+  .instruction-title h3 {
+    font-size: 11px;
+  }
+  .safety-note {
+    font-size: 7px;
+  }
+  .safety-note strong {
+    font-size: 8px;
+  }
+  .toast.rt-CalloutRoot {
+    left: calc(50% + 97px);
+  }
+  .page-footer {
+    font-size: 7px;
+  }
+}
+@media (max-width: 880px) {
+  .sidebar {
+    width: 74px;
+    padding: 19px 10px;
+    align-items: center;
+  }
+  .brand {
+    padding: 0 0 18px;
+    border-color: #ffffff1c;
+    justify-content: center;
+    width: 100%;
+  }
+  .school-logo {
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 0 0 2px #dfbb6555;
+  }
+  .brand-name,
+  .course-label,
+  .side-home.rt-Button,
+  .side-divider,
+  .topic-title,
+  .current-chapter,
+  .lesson-nav-item > span:nth-child(2),
+  .nav-indicator,
+  .sidebar-bottom {
+    display: none;
+  }
+  .lesson-nav {
+    width: 100%;
+    gap: 8px;
+    margin-top: 25px;
+  }
+  .lesson-nav-item.rt-Button {
+    padding: 7px;
+    justify-content: center;
+    height: 49px;
+  }
+  .lesson-nav-item.active {
+    box-shadow: inset 2px 0 var(--gold);
+  }
+  .lesson-number {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+  .result-link.rt-Button {
+    margin: 23px 0 0;
+    font-size: 0;
+    gap: 0;
+    justify-content: center;
+    width: 40px;
+    height: 36px;
+  }
+  .result-link > svg:last-child {
+    display: none;
+  }
+  .main-shell {
+    margin-left: 74px;
+    width: calc(100% - 74px);
+  }
+  .topbar {
+    height: 55px;
+  }
+  .page-heading h1 {
+    font-size: 25px;
+  }
+  .page-heading p {
+    font-size: 11px;
+  }
+  .practice-layout {
+    grid-template-columns: minmax(0, 1fr) 228px;
+  }
+  .hero-progress {
+    width: 155px;
+  }
+  .hero-copy h2 {
+    font-size: 19px;
+  }
+  .mail-sidebar {
+    width: 120px;
+  }
+  .row-sender {
+    width: 78px;
+  }
+  .toast.rt-CalloutRoot {
+    left: calc(50% + 37px);
+  }
+  .page-footer > span:first-child {
+    display: none;
+  }
+  .page-footer {
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 720px) {
+  main {
+    padding: 20px 17px 15px;
+  }
+  .topbar {
+    padding: 0 17px;
+    gap: 10px;
+  }
+  .student-name,
+  .topbar-divider {
+    display: none;
+  }
+  .topbar-right {
+    gap: 12px;
+  }
+  .breadcrumb {
+    font-size: 10px;
+    gap: 7px;
+  }
+  .topbar-right > .rt-Button {
+    font-size: 0;
+    gap: 0;
+    width: 26px;
+    min-width: 26px;
+  }
+  .page-heading h1 {
+    font-size: 24px;
+  }
+  .eyebrow {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .page-heading p {
+    font-size: 11px;
+  }
+  .restart.rt-Button {
+    width: 32px;
+    padding: 0;
+    min-width: 32px;
+  }
+  .restart > span {
+    display: none;
+  }
+  .hero-banner {
+    min-height: 95px;
+    gap: 12px;
+    padding: 14px;
+  }
+  .hero-progress {
+    display: none;
+  }
+  .hero-copy h2 {
+    font-size: 19px;
+  }
+  .hero-tag {
+    font-size: 7px;
+  }
+  .hero-copy p {
+    font-size: 10px;
+  }
+  .exercise-insignia {
+    height: 48px;
+    width: 40px;
+  }
+  .practice-heading {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 17px;
+  }
+  .practice-heading .rt-SegmentedControlRoot {
+    margin-left: auto;
+  }
+  .practice-heading .rt-Badge {
+    font-size: 7px;
+  }
+  .practice-layout {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+  .lesson-tabs .rt-TabsTrigger {
+    font-size: 10px;
+    height: 39px;
+    padding: 0 10px;
+    gap: 6px;
+  }
+  .tab-number {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+  }
+  .gmail-header {
+    height: 59px;
+    padding: 0 13px;
+    gap: 11px;
+  }
+  .gmail-menu {
+    display: flex;
+  }
+  .gmail-logo {
+    font-size: 21px;
+    gap: 6px;
+  }
+  .mail-search .rt-TextFieldInput {
+    font-size: 11px;
+    padding-left: 32px;
+  }
+  .mail-search > svg {
+    left: 9px;
+    width: 17px;
+  }
+  .mail-sidebar {
+    width: 142px;
+  }
+  .mail-sidebar nav .rt-Button {
+    font-size: 10px;
+    gap: 9px;
+    padding-left: 15px;
+  }
+  .mail-sidebar nav svg {
+    width: 16px;
+  }
+  .compose-button.rt-Button {
+    font-size: 12px;
+    gap: 8px;
+    height: 43px;
+    padding: 0 12px;
+    margin: 0 10px 17px 10px;
+  }
+  .row-sender {
+    width: 99px;
+  }
+  .mail-row-open.rt-Button {
+    font-size: 11px;
+    gap: 10px;
+  }
+  .row-time {
+    display: block;
+    font-size: 7px;
+  }
+  .mail-row {
+    height: 45px;
+  }
+  .mail-content,
+  .mail-body {
+    min-height: 370px;
+  }
+  .gmail-app {
+    min-height: 429px;
+  }
+  .mail-bottom-note {
+    flex-direction: row;
+    font-size: 7px;
+    padding-top: 50px;
+  }
+  .mail-bottom-note > span {
+    border-right: 1px solid #e3e9d6;
+  }
+  .mail-storage {
+    font-size: 6px;
+    padding-left: 14px;
+  }
+  .instruction-panel {
+    padding: 0 18px;
+  }
+  .instruction-title h3 {
+    font-size: 13px;
+  }
+  .task-intro h3 {
+    font-size: 17px;
+  }
+  .task-intro p {
+    font-size: 12px;
+  }
+  .task-intro p br {
+    display: none;
+  }
+  .task-steps strong {
+    font-size: 12px;
+  }
+  .task-steps .current p {
+    font-size: 11px;
+  }
+  .task-steps li {
+    padding-bottom: 20px;
+  }
+  .hint-button.rt-Button {
+    font-size: 11px;
+    height: 36px;
+  }
+  .safety-note {
+    font-size: 9px;
+  }
+  .safety-note strong {
+    font-size: 10px;
+  }
+  .account-page {
+    min-height: 429px;
+  }
+  .compose-window {
+    width: calc(100% - 26px);
+  }
+  .bottom-tip p {
+    font-size: 10px;
+  }
+  .page-footer {
+    font-size: 7px;
+  }
+}
+@media (max-width: 480px) {
+  .sidebar {
+    width: 61px;
+    padding: 18px 7px;
+  }
+  .school-logo {
+    width: 42px;
+    height: 42px;
+  }
+  .brand {
+    padding-bottom: 16px;
+  }
+  .lesson-number {
+    width: 26px;
+    height: 26px;
+  }
+  .lesson-nav-item.rt-Button {
+    padding: 6px;
+  }
+  .main-shell {
+    margin-left: 61px;
+    width: calc(100% - 61px);
+  }
+  main {
+    padding: 17px 12px 14px;
+  }
+  .topbar {
+    padding: 0 12px;
+    height: 53px;
+  }
+  .breadcrumb {
+    font-size: 8px;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .breadcrumb svg {
+    width: 10px;
+  }
+  .topbar-right {
+    gap: 7px;
+  }
+  .topbar-right > .rt-AvatarRoot {
+    width: 27px;
+    height: 27px;
+    font-size: 9px;
+  }
+  .topbar-right > .rt-Button {
+    width: 20px;
+    min-width: 20px;
+  }
+  .page-heading h1 {
+    font-size: 20px;
+    letter-spacing: -0.6px;
+  }
+  .eyebrow {
+    font-size: 6px;
+    letter-spacing: 0.8px;
+    margin-bottom: 7px;
+  }
+  .page-heading p {
+    font-size: 10px;
+    max-width: 235px;
+    line-height: 1.7;
+    margin-top: 5px;
+  }
+  .page-heading {
+    gap: 8px;
+    margin-bottom: 13px;
+  }
+  .restart.rt-Button {
+    height: 29px;
+    min-width: 27px;
+    width: 27px;
+  }
+  .restart svg {
+    width: 13px;
+  }
+  .hero-banner {
+    padding: 13px 12px;
+    border-left-width: 3px;
+    gap: 10px;
+    min-height: 91px;
+  }
+  .exercise-insignia {
+    width: 33px;
+    height: 44px;
+  }
+  .exercise-insignia > svg {
+    width: 22px;
+  }
+  .exercise-insignia > span {
+    font-size: 8px;
+  }
+  .hero-tag {
+    font-size: 6px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+  }
+  .hero-copy h2 {
+    font-size: 15px;
+    letter-spacing: -0.2px;
+    line-height: 1.5;
+  }
+  .hero-copy p {
+    font-size: 8px;
+    line-height: 1.8;
+    margin-top: 3px;
+    max-width: 200px;
+  }
+  .practice-heading > div:first-child {
+    gap: 6px;
+  }
+  .practice-heading h2 {
+    font-size: 12px;
+  }
+  .practice-heading > div:first-child > svg {
+    width: 16px;
+  }
+  .practice-heading .rt-Badge {
+    font-size: 6px;
+    gap: 4px;
+    margin-left: 0;
+  }
+  .practice-heading .rt-SegmentedControlRoot {
+    margin-left: 0;
+    width: 100%;
+    font-size: 10px;
+  }
+  .lesson-tabs .rt-TabsTrigger {
+    font-size: 8px;
+    padding: 0 5px;
+    gap: 4px;
+    height: 39px;
+  }
+  .tab-number {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+  }
+  .lesson-tabs {
+    margin-bottom: 12px;
+  }
+  .browser-chrome {
+    height: 31px;
+    padding: 0 8px;
+    gap: 8px;
+  }
+  .traffic-lights {
+    gap: 3px;
+  }
+  .traffic-lights i {
+    height: 5px;
+    width: 5px;
+  }
+  .address {
+    height: 20px;
+    font-size: 8px;
+    gap: 5px;
+    padding: 0 5px;
+  }
+  .address svg {
+    width: 10px;
+  }
+  .sim-label {
+    font-size: 5px;
+    letter-spacing: 0.3px;
+  }
+  .expand-button.rt-Button {
+    width: 17px;
+    min-width: 17px;
+  }
+  .expand-button svg {
+    width: 13px;
+  }
+  .gmail-header {
+    height: 53px;
+    padding: 0 9px;
+    gap: 8px;
+  }
+  .gmail-menu {
+    display: none;
+  }
+  .gmail-logo {
+    font-size: 17px;
+    gap: 4px;
+  }
+  .gmail-logo svg {
+    width: 23px;
+  }
+  .mail-search {
+    margin-left: 0;
+    gap: 0;
+  }
+  .mail-search > .rt-TextFieldRoot {
+    height: 29px;
+  }
+  .mail-search > svg {
+    left: 6px;
+    width: 12px;
+  }
+  .mail-search .rt-TextFieldInput {
+    font-size: 8px;
+    padding-left: 23px;
+    padding-right: 5px;
+  }
+  .mail-search .rt-TextFieldInput::placeholder {
+    font-size: 7px;
+  }
+  .gmail-profile {
+    margin-left: 0;
+  }
+  .mail-avatar.rt-Button {
+    height: 26px;
+    width: 26px;
+    min-width: 26px;
+    font-size: 10px;
+  }
+  .mail-sidebar {
+    width: 91px;
+    padding-right: 5px;
+  }
+  .compose-button.rt-Button {
+    height: 34px;
+    font-size: 8px;
+    margin: 0 3px 15px 5px;
+    padding: 0 6px;
+    gap: 4px;
+    border-radius: 5px;
+  }
+  .compose-button svg {
+    width: 15px;
+  }
+  .mail-sidebar nav .rt-Button {
+    font-size: 7px;
+    height: 31px;
+    padding: 0 5px 0 8px;
+    gap: 5px;
+  }
+  .mail-sidebar nav svg {
+    width: 12px;
+  }
+  .mail-sidebar nav b {
+    font-size: 6px;
+  }
+  .mail-storage {
+    font-size: 4px;
+    padding: 0 7px 20px;
+  }
+  .mail-row {
+    height: 48px;
+    gap: 6px;
+    padding: 0 6px;
+  }
+  .star-button.rt-Button {
+    width: 12px;
+    min-width: 12px;
+    height: 23px;
+  }
+  .star-button svg {
+    width: 12px;
+  }
+  .mail-row-open.rt-Button {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 32px;
+    gap: 4px;
+    padding: 6px 0;
+    align-content: center;
+    height: 100%;
+  }
+  .row-sender {
+    width: auto;
+    font-size: 9px;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .row-subject {
+    font-size: 8px;
+    grid-column: 1 / 3;
+    grid-row: 2;
+    width: 100%;
+  }
+  .row-subject > span {
+    display: none;
+  }
+  .row-time {
+    font-size: 6px;
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+  }
+  .mail-toolbar {
+    height: 35px;
+    padding: 0 7px;
+    font-size: 7px;
+  }
+  .mail-toolbar > div {
+    gap: 4px;
+  }
+  .mail-toolbar .icon-button {
+    width: 22px;
+    min-width: 22px;
+  }
+  .toolbar-square {
+    height: 9px;
+    width: 9px;
+  }
+  .inbox-tab {
+    height: 36px;
+    padding: 0 11px;
+    gap: 7px;
+    font-size: 9px;
+    max-width: 110px;
+  }
+  .inbox-tab svg {
+    width: 14px;
+  }
+  .mail-body,
+  .mail-content {
+    min-height: 358px;
+  }
+  .gmail-app {
+    min-height: 411px;
+  }
+  .mail-bottom-note {
+    font-size: 5px;
+    gap: 7px;
+    flex-direction: column;
+    padding-top: 30px;
+  }
+  .mail-bottom-note > span {
+    border: 0;
+  }
+  .mail-bottom-note svg {
+    width: 11px;
+  }
+  .compose-window {
+    right: 5px;
+    width: calc(100% - 10px);
+  }
+  .compose-title {
+    height: 33px;
+    padding: 0 10px;
+    font-size: 11px;
+  }
+  .compose-fields {
+    padding: 0 10px 10px;
+  }
+  .compose-fields .rt-TextFieldInput {
+    font-size: 11px;
+  }
+  .compose-fields textarea {
+    height: 140px;
+    font-size: 12px;
+  }
+  .compose-actions {
+    gap: 6px;
+  }
+  .compose-actions small {
+    font-size: 6px;
+  }
+  .send-button.rt-Button {
+    height: 30px;
+    font-size: 11px;
+    padding: 0 11px;
+    gap: 12px;
+  }
+  .opened-mail {
+    padding: 14px 12px;
+  }
+  .opened-mail h3 {
+    font-size: 15px;
+  }
+  .opened-mail h3 span {
+    font-size: 6px;
+    display: inline-block;
+  }
+  .sender-avatar {
+    display: none;
+  }
+  .sender-info {
+    gap: 5px;
+  }
+  .sender-info strong {
+    font-size: 10px;
+  }
+  .sender-info small {
+    font-size: 7px;
+  }
+  .sender-info p {
+    font-size: 8px;
+  }
+  .sender-info > span:last-child {
+    font-size: 6px;
+  }
+  .message-body {
+    margin: 15px 0;
+    font-size: 12px;
+  }
+  .received-attachment {
+    margin-left: 0;
+    padding: 8px;
+    gap: 7px;
+    font-size: 10px;
+  }
+  .received-attachment small {
+    font-size: 6px;
+  }
+  .received-attachment svg {
+    width: 19px;
+  }
+  .reply-button.rt-Button {
+    margin-left: 0;
+  }
+  .profile-popover {
+    min-width: 220px;
+    padding: 16px;
+  }
+  .account-page {
+    padding: 22px 7px 15px;
+  }
+  .account-card {
+    padding: 0 9px;
+  }
+  .account-card h3 {
+    font-size: 21px;
+  }
+  .account-card > p {
+    font-size: 10px;
+  }
+  .account-card label:not(.checkbox-label) {
+    font-size: 11px;
+  }
+  .account-card .rt-TextFieldRoot {
+    font-size: 11px;
+  }
+  .account-footer {
+    font-size: 6px;
+    gap: 4px;
+  }
+  .account-footer svg {
+    width: 10px;
+  }
+  .username-field > span {
+    font-size: 10px;
+  }
+  .username-field .rt-TextFieldInput {
+    padding-right: 80px;
+  }
+  .account-buttons {
+    gap: 8px;
+  }
+  .demo-credentials span {
+    font-size: 10px;
+  }
+  .instruction-panel {
+    padding: 0 15px;
+  }
+  .task-intro h3 {
+    font-size: 16px;
+  }
+  .task-intro p {
+    font-size: 11px;
+  }
+  .task-steps strong {
+    font-size: 12px;
+  }
+  .bottom-tip {
+    padding: 9px 10px;
+    gap: 7px;
+  }
+  .bottom-tip p {
+    font-size: 9px;
+  }
+  .page-footer {
+    font-size: 6px;
+    line-height: 1.8;
+    margin-top: 12px;
+  }
+  .toast.rt-CalloutRoot {
+    left: calc(50% + 30px);
+    max-width: calc(100vw - 83px);
+    padding: 11px;
+    gap: 8px;
+  }
+  .toast .rt-CalloutText {
+    font-size: 10px;
+  }
+  .toast .rt-IconButton {
+    margin-left: 0;
+  }
+  .practice-dialog .rt-DialogTitle {
+    font-size: 21px;
+  }
+  .practice-dialog .rt-DialogDescription {
+    font-size: 12px;
+  }
+  .help-list {
+    font-size: 11px;
+  }
+  .result-rows strong {
+    font-size: 11px;
+  }
+  .result-rows small {
+    font-size: 9px;
+  }
+  .result-rows > .rt-Button {
+    gap: 9px;
+    padding: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

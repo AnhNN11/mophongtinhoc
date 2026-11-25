@@ -1,0 +1,7 @@
+PHIẾU THỰC HÀNH TIN HỌC 6 – BÀI 8
+
+1. Đăng nhập tài khoản mô phỏng.
+2. Mở và đọc một bức thư.
+3. Soạn thư hỏi thăm bạn, có tiêu đề và lời chào.
+4. Thử đính kèm tệp, gửi thư và xem lại ở mục Đã gửi.
+5. Đăng xuất sau khi hoàn thành.

@@ -1,69 +1,193 @@
-import Image from "next/image";
+"use client";
+
+import {
+  Avatar,
+  Badge,
+  Button,
+  Progress,
+  SegmentedControl,
+  Tabs,
+  Tooltip,
+} from "@radix-ui/themes";
+import { Icon } from "./_components/icon";
+import { LessonSidebar } from "./_components/LessonSidebar";
+import { LessonGuide } from "./_components/LessonGuide";
+import { PracticeBrowser } from "./_components/PracticeBrowser";
+import { PracticeDialogs } from "./_components/PracticeDialogs";
+import {
+  SimulationProvider,
+  useSimulation,
+} from "./_components/simulation-context";
+import { lessons } from "./_lib/lesson-data";
+
+function PracticePage() {
+  const {
+    lesson,
+    chooseLesson,
+    checks,
+    completed,
+    progress,
+    mode,
+    setMode,
+    setModal,
+    wide,
+    setWide,
+  } = useSimulation();
+  return (
+    <div className="app-shell">
+      <LessonSidebar />
+      <div className="main-shell">
+        <header className="topbar">
+          <div className="breadcrumb">
+            <span>Phòng thực hành</span>
+            <Icon name="chevron" size={13} />
+            <strong>Bài 8: Thư điện tử</strong>
+          </div>
+          <div className="topbar-right">
+            <Button variant="ghost" size="1" onClick={() => setModal("help")}>
+              <Icon name="help" size={16} />
+              Hướng dẫn
+            </Button>
+            <span className="topbar-divider" />
+            <Avatar size="2" fallback="HS" color="gold" radius="full" />
+            <span className="student-name">
+              Học sinh<small>Học tập & rèn luyện</small>
+            </span>
+          </div>
+        </header>
+        <main>
+          <div className="page-heading">
+            <div>
+              <div className="eyebrow">
+                <span />
+                TIN HỌC 6 · KHÔNG GIAN HỌC TẬP
+              </div>
+              <h1>Thực hành thư điện tử</h1>
+              <p>Thao tác thực tế, rèn luyện kĩ năng sử dụng thư điện tử.</p>
+            </div>
+            <Tooltip content="Xóa tiến độ và bắt đầu lượt thực hành mới">
+              <Button
+                size="2"
+                variant="surface"
+                onClick={() => setModal("reset")}
+                className="restart"
+              >
+                <Icon name="refresh" size={15} />
+                <span>Làm lại từ đầu</span>
+              </Button>
+            </Tooltip>
+          </div>
+          <section className="hero-banner" aria-label="Tổng quan bài thực hành">
+            <span className="exercise-insignia">
+              <Icon name="mail" size={27} />
+              <span>★</span>
+            </span>
+            <div className="hero-copy">
+              <span className="hero-tag">BÀI 08 · PHẦN 3</span>
+              <h2>Rèn kĩ năng. Vững kết nối.</h2>
+              <p>Tạo tài khoản · Đọc thư · Soạn và gửi thư</p>
+            </div>
+            <div className="hero-progress">
+              <span>TIẾN ĐỘ RÈN LUYỆN</span>
+              <strong>
+                {completed}
+                <span>/ 3 nhiệm vụ</span>
+              </strong>
+              <Progress
+                value={progress}
+                size="1"
+                color="gold"
+                aria-label="Tiến độ toàn bài"
+              />
+            </div>
+          </section>
+          <div className="practice-heading">
+            <div>
+              <Icon name="grid" size={19} />
+              <h2>Khu vực thực hành</h2>
+              <Badge variant="soft" size="1" color="grass">
+                <span className="status-dot" />
+                Môi trường mô phỏng
+              </Badge>
+            </div>
+            <Button
+              size="1"
+              variant="surface"
+              onClick={() => setWide(!wide)}
+              aria-pressed={!wide}
+            >
+              <Icon name="book" size={15} />
+              {wide ? "Hiện nhiệm vụ" : "Ẩn nhiệm vụ"}
+            </Button>
+            <SegmentedControl.Root
+              size="1"
+              value={mode}
+              onValueChange={(v) => setMode(v as "guided" | "free")}
+              aria-label="Chế độ thực hành"
+            >
+              <SegmentedControl.Item value="guided">
+                Có hướng dẫn
+              </SegmentedControl.Item>
+              <SegmentedControl.Item value="free">
+                Tự thực hành
+              </SegmentedControl.Item>
+            </SegmentedControl.Root>
+          </div>
+          <Tabs.Root
+            value={String(lesson)}
+            onValueChange={(v) => chooseLesson(Number(v))}
+          >
+            <Tabs.List
+              className="lesson-tabs"
+              size="2"
+              aria-label="Bài thực hành"
+            >
+              {lessons.map((item, i) => (
+                <Tabs.Trigger key={item.title} value={String(i)}>
+                  <span
+                    className={`tab-number ${checks[i].every(Boolean) ? "complete" : ""}`}
+                  >
+                    {checks[i].every(Boolean) ? (
+                      <Icon name="check" size={13} />
+                    ) : (
+                      i + 1
+                    )}
+                  </span>
+                  {item.title}
+                </Tabs.Trigger>
+              ))}
+            </Tabs.List>
+            {lessons.map((item, i) => (
+              <Tabs.Content key={item.title} value={String(i)}>
+                <div className={`practice-layout ${wide ? "wide" : ""}`}>
+                  <PracticeBrowser />
+                  <LessonGuide />
+                </div>
+              </Tabs.Content>
+            ))}
+          </Tabs.Root>
+          <div className="bottom-tip">
+            <Icon name="light" size={16} />
+            <p>
+              <strong>Ghi nhớ:</strong> Kiểm tra người nhận, tiêu đề, nội dung
+              và tệp đính kèm trước khi gửi thư.
+            </p>
+          </div>
+          <footer className="page-footer">
+            <span>Mầm Xanh · Trường Thiếu sinh quân miền Trung</span>
+            <span>SGK Tin học 6 · Kết nối tri thức với cuộc sống</span>
+          </footer>
+        </main>
+      </div>
+      <PracticeDialogs />
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <SimulationProvider>
+      <PracticePage />
+    </SimulationProvider>
   );
 }
